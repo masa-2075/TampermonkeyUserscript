@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         一括チェック
 // @namespace    http://tampermonkey.net/
-// @version      2025-05-04
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rakuten.co.jp
 // @grant       GM_log
+// @updateURL    https://github.com/hepokon365/updatable_userscript/raw/master/src/sample.user.js
+// @downloadURL  https://github.com/hepokon365/updatable_userscript/raw/master/src/sample.user.js
+// @supportURL   https://github.com/hepokon365/updatable_userscript
 // @run-at document-idle
 // ==/UserScript==
 
