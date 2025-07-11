@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         一括チェック
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
-// @description  try to take over the world!
+// @version      0.1.6
+// @description  RMSダウンロード一括チェック
 // @author       You
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rakuten.co.jp
 // @grant       GM_log
-// @updateURL    https://github.com/hepokon365/updatable_userscript/raw/master/src/sample.user.js
-// @downloadURL  https://github.com/hepokon365/updatable_userscript/raw/master/src/sample.user.js
+// @updateURL    https://github.com/masa-2075/tm_userscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
+// @downloadURL  https://github.com/masa-2075/tm_userscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
 // @supportURL   https://github.com/hepokon365/updatable_userscript
 // @run-at document-idle
 // ==/UserScript==
@@ -44,6 +44,7 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
                             `<button id="itemAll" class="exatend_btn">全項目一括チェック</button>
 <button id="itemNameChange" class="exatend_btn">商品名変更セットをチェック</button>
 <button id="itemPrice" class="exatend_btn">金額変更セットをチェック</button>
+<button id="movieChange" class="exatend_btn">動画変更セットをチェック</button>
 <button id="allClear" class="exatend_btn">全てクリア</button>
 `)
 
@@ -52,6 +53,7 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
     let itemNameChange = document.getElementById('itemNameChange');
     let itemPrice= document.getElementById('itemPrice');
     let allClear =  document.getElementById('allClear');
+    let movieChange = document.getElementById('movieChange');
 
 
     allClear.addEventListener('click', function(){
@@ -64,24 +66,35 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
         }
         event.stopPropagation();
     })
-
+    
+    //商品名変更パターンのチェック
     itemNameChange.addEventListener('click', function(){
         var list = [16,57]
         clickNodelist(list)
         event.stopPropagation();
     });
 
-
+    //全項目一括チェック
     itemAll.addEventListener('click', function(){
         var list = [15,18,23,29,35,44,47,55,61,68,73,82,89,92,95,101]
         clickNodelist(list)
     });
 
+    //金額変更パターンのチェック
     itemPrice.addEventListener('click', function(){
         var list = [30,31]
         clickNodelist(list)
         event.stopPropagation();
     });
+
+    //動画変更パターンのチェック
+    movieChange.addEventListener('click', function(){
+        var list = [55,59]
+        clickNodelist(list)
+        event.stopPropagation();
+    });   
+
+
 
 
     function clickNodelist(list){
