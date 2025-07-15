@@ -1,2 +1,2 @@
-# tm_userscript
-Tempermonkyユーザースクリプト配布用
+# Tempermonkyユーザースクリプト配布用
+
