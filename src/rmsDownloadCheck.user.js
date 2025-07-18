@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一括チェック
 // @namespace    http://tampermonkey.net/
-// @version      0.2.0
+// @version      0.2.1
 // @description  RMSダウンロード一括チェック
 // @author       You
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
@@ -29,26 +29,33 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
 
 
 (function() {
-    document.body.insertAdjacentHTML('beforebegin',
-                                     `<style>
-                                     .exatend_btn {
-                                        margin-right:12px;
-                                        border:none;
-                                        background:#dcdcdc;
-                                        line-height: 2rem;
-                                        border-radius: 4px;}
-                                      </style>`)
+    document.body.insertAdjacentHTML(
+        'beforebegin',
+        `<style>
+        .exatend_btn {
+            margin-right: 12px;
+            border: none;
+            background: #3590d6;
+            line-height: 2rem;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            padding: 6px;
+            color: #fff;
+        }
+        </style>`
+    )
 
     container
-        .insertAdjacentHTML('beforebegin',
-                            `<button id="itemAll" class="exatend_btn">全項目一括チェック</button>
-<button id="itemNameChange" class="exatend_btn">商品名変更セットをチェック</button>
-<button id="itemPrice" class="exatend_btn">金額変更セットをチェック</button>
-<button id="movieChange" class="exatend_btn">動画変更セットをチェック</button>
-<button id="doublePrice" class="exatend_btn">二重価格変更セットをチェック</button>
-<button id="allClear" class="exatend_btn">全てクリア</button>
-`)
-
+        .insertAdjacentHTML(
+            'beforebegin',
+            `<button id="itemAll" class="exatend_btn">全項目一括チェック</button>
+            <button id="itemNameChange" class="exatend_btn">商品名変更セットをチェック</button>
+            <button id="itemPrice" class="exatend_btn">金額変更セットをチェック</button>
+            <button id="movieChange" class="exatend_btn">動画変更セットをチェック</button>
+            <button id="doublePrice" class="exatend_btn">二重価格変更セットをチェック</button>
+            <button id="allClear" class="exatend_btn">全てクリア</button>
+            `
+    )
 
     let itemAll = document.getElementById('itemAll');
     let itemNameChange = document.getElementById('itemNameChange');
