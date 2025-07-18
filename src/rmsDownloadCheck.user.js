@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一括チェック
 // @namespace    http://tampermonkey.net/
-// @version      0.1.9
+// @version      0.2.0
 // @description  RMSダウンロード一括チェック
 // @author       You
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
@@ -45,6 +45,7 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
 <button id="itemNameChange" class="exatend_btn">商品名変更セットをチェック</button>
 <button id="itemPrice" class="exatend_btn">金額変更セットをチェック</button>
 <button id="movieChange" class="exatend_btn">動画変更セットをチェック</button>
+<button id="doublePrice" class="exatend_btn">二重価格変更セットをチェック</button>
 <button id="allClear" class="exatend_btn">全てクリア</button>
 `)
 
@@ -54,6 +55,7 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
     let itemPrice= document.getElementById('itemPrice');
     let allClear =  document.getElementById('allClear');
     let movieChange = document.getElementById('movieChange');
+    let doublePrice = document.getElementById('doublePrice');
 
 
     allClear.addEventListener('click', function(){
@@ -95,7 +97,12 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
     });   
 
 
-
+    //動画変更パターンのチェック
+    doublePrice.addEventListener('click', function(){
+        var list = [15, 30,31,32,58]
+        clickNodelist(list)
+        event.stopPropagation();
+    });   
 
     function clickNodelist(list){
         let label =  document.querySelectorAll("label.rms-check-label");
