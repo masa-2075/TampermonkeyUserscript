@@ -89,7 +89,7 @@ let container =await  waitQuerySelector(".rms-row.justify-content-center.pa-16")
 
     //動画変更パターンのチェック
     movieChange.addEventListener('click', function(){
-        var list = [55,59]
+        var list = [64]
         clickNodelist(list)
         event.stopPropagation();
     });   
