@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         一括チェック
 // @namespace    http://tampermonkey.net/
-// @version      0.1.6
+// @version      0.1.7
 // @description  RMSダウンロード一括チェック
 // @author       You
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
