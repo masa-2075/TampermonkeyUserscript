@@ -7,8 +7,8 @@
 // @match        https://item.rms.rakuten.co.jp/rms-item-download/shops/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rakuten.co.jp
 // @grant       GM_log
-// @updateURL    https://github.com/masa-2075/tm_userscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
-// @downloadURL  https://github.com/masa-2075/tm_userscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
+// @updateURL    https://github.com/masa-2075/TampermonkeyUserscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
+// @downloadURL  https://github.com/masa-2075/TampermonkeyUserscript/raw/refs/heads/main/src/rmsDownloadCheck.user.js
 // @supportURL   https://github.com/hepokon365/updatable_userscript
 // @run-at document-idle
 // ==/UserScript==
